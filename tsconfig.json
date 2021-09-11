@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "outDir":"build",
+    "paths": {
+      "@index": ["src/index.ts"],
+      "@app/*": ["src/app/*"],
+      "@handlers/*": ["src/handlers/*"],
+      "@persistence/*": ["src/persistence/*"],
+      "@routes/*": ["src/routes/*"],
+      "@search/*": ["src/search/*"],
+      "@tokenizer/*": ["src/tokenizer/*"],
+      "@utils/*": ["src/utils/*"],
+      "@validator/*": ["src/validator/*"],
+    },
+    "target": "es2020" /* Specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017', 'ES2018', 'ES2020', 'ES2020', or 'ESNEXT'. */,
+    "module": "commonjs" /* Specify module code generation: 'none', 'commonjs', 'amd', 'system', 'umd', 'es2015', 'es2020', or 'ESNext'. */,
+    "lib": ["es2020", "dom", "esnext"],
+    "checkJs": false,
+    "resolveJsonModule": true,
+    "strict": false /* Enable all strict type-checking options. */,
+    "strictNullChecks": false /* Enable strict null checks. */,
+    "moduleResolution": "node" /* Specify module resolution strategy: 'node' (Node.js) or 'classic' (TypeScript pre-1.6). */,
+    "esModuleInterop": true /* Enables emit interoperability between CommonJS and ES Modules via creation of namespace objects for all imports. Implies 'allowSyntheticDefaultImports'. */,
+    "skipLibCheck": true /* Skip type checking of declaration files. */,
+    "forceConsistentCasingInFileNames": true /* Disallow inconsistently-cased references to the same file. */
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules", "keys", "**/*.test.*"]
+}

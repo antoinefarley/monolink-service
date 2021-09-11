@@ -1,0 +1,50 @@
+{
+  "requires": true,
+  "lockfileVersion": 1,
+  "dependencies": {
+    "@types/mongodb": "^4.0.7",
+    "@typescript-eslint/eslint-plugin": "^4.31.0",
+    "@typescript-eslint/parser": "^4.31.0",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "eslint": "^7.32.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "module-alias": "^2.2.2",
+    "mongodb": "^4.1.1",
+    "mongoose": "^6.0.5",
+    "node-fetch": "^2.6.1",
+    "prettier": "^2.4.0",
+    "rxjs": "^6.6.7",
+    "switcho": "^1.0.4",
+    "ts-node": "^9.0.0",
+    "typescript": "^4.0.2"
+  },
+  "scripts": {
+    "build": "yarn tsc",
+    "start": "NODE_ENV=production && ts-node src/main.ts",
+    "lint": "eslint ./src --ext .ts",
+    "lint-fix": "yarn lint --fix"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.9",
+    "@types/express": "^4.17.11",
+    "@types/node": "^16.9.1",
+    "@types/node-fetch": "^2.5.8",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-import-resolver-typescript": "^2.4.0",
+    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-prettier": "^4.0.0"
+  },
+  "_moduleAliases": {
+    "@index": "./src/index.ts",
+    "@app": "src/app",
+    "@handlers": "src/handlers",
+    "@persistence": "src/persistence",
+    "@routes": "src/routes",
+    "@search": "src/search",
+    "@tokenizer": "src/tokenizer",
+    "@utils": "src/utils",
+    "@validator": "src/validator"
+  }
+}
