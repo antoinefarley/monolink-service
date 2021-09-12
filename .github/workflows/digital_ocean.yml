@@ -16,3 +16,22 @@ jobs:
         node-version: '16'
     - run: yarn install
     - run: yarn build
+
+  deploy:
+    needs: [build]
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Deploy Monolink on DigitalOcean
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.SSH_DIGITALOCEAN_HOST }}
+        username: ${{ secrets.SSH_DIGITALOCEAN_USER }}
+        key: ${{ secrets.SSH_DIGITALOCEAN_PRIVATEKEY }}
+        port: ${{ secrets.SSH_DIGITALOCEAN_PORT }}
+        script: |
+          cd ~/monolink-service
+          git pull origin master
+          yarn install --force
+          yarn build
+          pm2 restart monolink-service
